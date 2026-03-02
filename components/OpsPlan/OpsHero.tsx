@@ -11,13 +11,13 @@ export default function OpsHero() {
         zh: {
             tag: '⚡ 运营执行方案 · 2026 Q2–Q3',
             title: '至臻执行 · 透明增长',
-            subtitle: 'MEDX × ChainPulse Capital 六个月全链路运营执行方案。',
+            subtitle: 'MQE × ChainPulse Capital 六个月全链路运营执行方案。',
             desc: '从品牌冷启动到生态规模化，每一个里程碑都清晰可见。',
         },
         en: {
             tag: '⚡ Ops roadmap · 2026 Q2–Q3',
             title: 'ELITE EXECUTION. TRANSPARENT GROWTH.',
-            subtitle: 'MEDX × ChainPulse Capital: 6-Month Full-Cycle Operations Plan.',
+            subtitle: 'MQE × ChainPulse Capital: 6-Month Full-Cycle Operations Plan.',
             desc: 'From brand cold start to scaled ecosystem, every milestone is visible.',
         }
     }[lang];

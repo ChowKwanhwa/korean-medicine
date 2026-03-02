@@ -10,22 +10,22 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const MAP = {
     zh: [
-        { id: 'okr', name: '📊 总览 & OKR', file: 'MEDX运营执行方案 - 总览OKR.csv' },
-        { id: 'plan', name: '📅 月度执行计划', file: 'MEDX运营执行方案 - 月度执行计划.csv' },
-        { id: 'matrix', name: '📱 社媒矩阵', file: 'MEDX运营执行方案 - 社媒矩阵清单.csv' },
-        { id: 'kol', name: '🤝 KOL 名单', file: 'MEDX运营执行方案 - KOL名单.csv' },
-        { id: 'content', name: '✍️ 内容规划', file: 'MEDX运营执行方案 - 文章内容规划.csv' },
-        { id: 'event', name: '🌏 线下会议', file: 'MEDX运营执行方案 - 线下会议活动.csv' },
-        { id: 'vc', name: '🏛️ 机构背书', file: 'MEDX运营执行方案 - 机构背书资源.csv' },
+        { id: 'okr', name: '📊 总览 & OKR', file: 'MQE运营执行方案 - 总览OKR.csv' },
+        { id: 'plan', name: '📅 月度执行计划', file: 'MQE运营执行方案 - 月度执行计划.csv' },
+        { id: 'matrix', name: '📱 社媒矩阵', file: 'MQE运营执行方案 - 社媒矩阵清单.csv' },
+        { id: 'kol', name: '🤝 KOL 名单', file: 'MQE运营执行方案 - KOL名单.csv' },
+        { id: 'content', name: '✍️ 内容规划', file: 'MQE运营执行方案 - 文章内容规划.csv' },
+        { id: 'event', name: '🌏 线下会议', file: 'MQE运营执行方案 - 线下会议活动.csv' },
+        { id: 'vc', name: '🏛️ 机构背书', file: 'MQE运营执行方案 - 机构背书资源.csv' },
     ],
     en: [
-        { id: 'okr', name: '📊 Overview & OKR', file: 'MEDX运营执行方案 - 总览OKR.csv' },
-        { id: 'plan', name: '📅 Monthly Plan', file: 'MEDX运营执行方案 - 月度执行计划.csv' },
-        { id: 'matrix', name: '📱 Social Matrix', file: 'MEDX运营执行方案 - 社媒矩阵清单.csv' },
-        { id: 'kol', name: '🤝 KOL List', file: 'MEDX运营执行方案 - KOL名单.csv' },
-        { id: 'content', name: '✍️ Content', file: 'MEDX运营执行方案 - 文章内容规划.csv' },
-        { id: 'event', name: '🌏 Events', file: 'MEDX运营执行方案 - 线下会议活动.csv' },
-        { id: 'vc', name: '🏛️ VC Backing', file: 'MEDX运营执行方案 - 机构背书资源.csv' },
+        { id: 'okr', name: '📊 Overview & OKR', file: 'MQE运营执行方案 - 总览OKR.csv' },
+        { id: 'plan', name: '📅 Monthly Plan', file: 'MQE运营执行方案 - 月度执行计划.csv' },
+        { id: 'matrix', name: '📱 Social Matrix', file: 'MQE运营执行方案 - 社媒矩阵清单.csv' },
+        { id: 'kol', name: '🤝 KOL List', file: 'MQE运营执行方案 - KOL名单.csv' },
+        { id: 'content', name: '✍️ Content', file: 'MQE运营执行方案 - 文章内容规划.csv' },
+        { id: 'event', name: '🌏 Events', file: 'MQE运营执行方案 - 线下会议活动.csv' },
+        { id: 'vc', name: '🏛️ VC Backing', file: 'MQE运营执行方案 - 机构背书资源.csv' },
     ]
 };
 

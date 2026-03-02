@@ -165,7 +165,7 @@ export default function BentoGrid() {
                                 <div className="flex-1">
                                     <div className="flex items-center gap-3 mb-4">
                                         <div className="w-10 h-10 rounded-2xl bg-emerald/10 border border-emerald/20 flex items-center justify-center text-xl">📋</div>
-                                        <span className="text-[9px] font-black uppercase tracking-[0.3em] text-emerald/70">MEDX × ChainPulse</span>
+                                        <span className="text-[9px] font-black uppercase tracking-[0.3em] text-emerald/70">MQE × ChainPulse</span>
                                     </div>
                                     <h3 className="text-4xl md:text-5xl font-black mb-3 tracking-tight">
                                         {lang === 'zh' ? '运营计划' : 'Ops Plan'}
