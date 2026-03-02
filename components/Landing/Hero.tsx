@@ -4,7 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { useLanguage } from '../LanguageContext';
-import { ArrowRight, Zap, Shield, TrendingUp } from "lucide-react";
+import { ArrowRight, Zap } from "lucide-react";
+import Link from 'next/link';
 
 export default function Hero() {
     const { lang } = useLanguage();
@@ -82,13 +83,17 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
-                    <Button size="lg" className="h-14 px-10 rounded-full bg-cyan text-bg-primary hover:bg-cyan/90 font-black uppercase tracking-widest text-xs group shadow-[0_0_30px_rgba(6,182,212,0.4)]">
-                        {t.cta1}
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                    <Button size="lg" variant="outline" className="h-14 px-10 rounded-full border-white/10 glass-morphism font-black uppercase tracking-widest text-xs hover:bg-white/5 transition-all">
-                        {t.cta2}
-                    </Button>
+                    <Link href="/portfolio">
+                        <Button size="lg" className="h-14 px-10 rounded-full bg-cyan text-bg-primary hover:bg-cyan/90 font-black uppercase tracking-widest text-xs group shadow-[0_0_30px_rgba(6,182,212,0.4)]">
+                            {t.cta1}
+                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                    </Link>
+                    <Link href="/ops-plan">
+                        <Button size="lg" variant="outline" className="h-14 px-10 rounded-full border-white/10 glass-morphism font-black uppercase tracking-widest text-xs hover:bg-white/5 transition-all">
+                            {t.cta2}
+                        </Button>
+                    </Link>
                 </motion.div>
 
                 {/* Stats Row */}
