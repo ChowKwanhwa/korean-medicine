@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Papa from 'papaparse';
 import { useLanguage } from '@/components/LanguageContext';
 import { cn } from "@/lib/utils";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const MAP = {
@@ -61,70 +60,75 @@ export default function OpsTabs() {
     }, [activeTab, activeTabFile]);
 
     return (
-        <div className="container mx-auto px-6 py-20 pb-40">
-            <Tabs defaultValue="okr" className="w-full" onValueChange={setActiveTab}>
-                <div className="flex justify-center mb-16 overflow-x-auto scrollbar-hide">
-                    <TabsList className="h-16 rounded-full glass-morphism p-2 gap-2 border-white/5 bg-bg-secondary/40">
-                        {tabs.map((tab) => (
-                            <TabsTrigger
-                                key={tab.id}
-                                value={tab.id}
-                                className="rounded-full px-8 text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-cyan data-[state=active]:text-bg-primary transition-all duration-300"
-                            >
-                                {tab.name}
-                            </TabsTrigger>
-                        ))}
-                    </TabsList>
+        <div className="container mx-auto px-4 sm:px-6 py-20 pb-40">
+            {/* ── Scrollable tab bar ── */}
+            <div className="w-full overflow-x-auto scrollbar-hide mb-12">
+                <div className="flex items-center gap-2 px-2 py-2 rounded-full glass-morphism border border-white/5 bg-bg-secondary/40 w-max mx-auto min-w-full sm:w-auto sm:min-w-0 sm:mx-auto">
+                    {tabs.map((tab) => (
+                        <button
+                            key={tab.id}
+                            onClick={() => setActiveTab(tab.id)}
+                            className={cn(
+                                "flex-shrink-0 rounded-full px-4 sm:px-6 py-3 text-[10px] sm:text-[11px] font-black uppercase tracking-widest whitespace-nowrap transition-all duration-300",
+                                activeTab === tab.id
+                                    ? "bg-cyan text-bg-primary shadow-[0_0_16px_rgba(6,182,212,0.4)]"
+                                    : "text-white/60 hover:text-white hover:bg-white/5"
+                            )}
+                        >
+                            {tab.name}
+                        </button>
+                    ))}
                 </div>
+            </div>
 
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={activeTab}
-                        initial={{ opacity: 0, scale: 0.98 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.98 }}
-                        transition={{ duration: 0.3 }}
-                        className="rounded-[60px] glass-morphism border-white/5 overflow-hidden shadow-2xl"
-                    >
-                        {loading ? (
-                            <div className="p-12 space-y-4">
-                                <Skeleton className="h-12 w-full rounded-2xl bg-white/5" />
-                                <Skeleton className="h-12 w-3/4 rounded-2xl bg-white/5" />
-                                <Skeleton className="h-12 w-full rounded-2xl bg-white/5" />
-                                <Skeleton className="h-12 w-5/6 rounded-2xl bg-white/5" />
-                            </div>
-                        ) : (
-                            <div className="overflow-x-auto">
-                                <table className="w-full border-collapse text-left">
-                                    <thead>
-                                        <tr className="bg-white/5 border-b border-white/5">
-                                            {data.length > 0 && Object.keys(data[0]).map((header) => (
-                                                <th key={header} className="px-10 py-8 font-black text-[9px] uppercase tracking-[0.2em] text-cyan/70">
-                                                    {header}
-                                                </th>
+            {/* ── Content panel ── */}
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={activeTab}
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.3 }}
+                    className="rounded-[40px] sm:rounded-[60px] glass-morphism border-white/5 overflow-hidden shadow-2xl"
+                >
+                    {loading ? (
+                        <div className="p-8 sm:p-12 space-y-4">
+                            <Skeleton className="h-12 w-full rounded-2xl bg-white/5" />
+                            <Skeleton className="h-12 w-3/4 rounded-2xl bg-white/5" />
+                            <Skeleton className="h-12 w-full rounded-2xl bg-white/5" />
+                            <Skeleton className="h-12 w-5/6 rounded-2xl bg-white/5" />
+                        </div>
+                    ) : (
+                        <div className="overflow-x-auto">
+                            <table className="w-full border-collapse text-left">
+                                <thead>
+                                    <tr className="bg-white/5 border-b border-white/5">
+                                        {data.length > 0 && Object.keys(data[0]).map((header) => (
+                                            <th key={header} className="px-6 sm:px-10 py-6 sm:py-8 font-black text-[9px] uppercase tracking-[0.2em] text-cyan/70 whitespace-nowrap">
+                                                {header}
+                                            </th>
+                                        ))}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {data.map((row, i) => (
+                                        <tr
+                                            key={i}
+                                            className="border-b border-white/5 last:border-0 hover:bg-white/5 transition-all duration-300 group"
+                                        >
+                                            {Object.values(row).map((val: any, j) => (
+                                                <td key={j} className="px-6 sm:px-10 py-6 sm:py-8 text-sm font-medium text-text-muted group-hover:text-white transition-colors leading-relaxed">
+                                                    {val}
+                                                </td>
                                             ))}
                                         </tr>
-                                    </thead>
-                                    <tbody>
-                                        {data.map((row, i) => (
-                                            <tr
-                                                key={i}
-                                                className="border-b border-white/5 last:border-0 hover:bg-white/5 transition-all duration-300 group"
-                                            >
-                                                {Object.values(row).map((val: any, j) => (
-                                                    <td key={j} className="px-10 py-8 text-sm font-medium text-text-muted group-hover:text-white transition-colors leading-relaxed">
-                                                        {val}
-                                                    </td>
-                                                ))}
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        )}
-                    </motion.div>
-                </AnimatePresence>
-            </Tabs>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    )}
+                </motion.div>
+            </AnimatePresence>
         </div>
     );
 }
