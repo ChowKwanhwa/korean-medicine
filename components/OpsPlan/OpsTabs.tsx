@@ -149,7 +149,7 @@ const SpreadingPlan = ({ lang }: { lang: 'zh' | 'en' }) => {
                             </div>
                             <h4 className="text-xl font-black text-white">{col.stage}</h4>
                         </div>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {col.details.map((item, j) => (
                                 <div key={j} className="space-y-2">
@@ -238,7 +238,7 @@ const MediaBudget = ({ lang }: { lang: 'zh' | 'en' }) => {
 export default function OpsTabs() {
     const { lang } = useLanguage();
     const [activeTab, setActiveTab] = useState('marketing');
-    
+
     // Default to 'zh' structure to avoid crashes during typing
     const tabs = TABS[lang as 'zh' | 'en'] || TABS['zh'];
 
@@ -247,7 +247,7 @@ export default function OpsTabs() {
             {/* 顶层导航 Tabs */}
             <div className="w-full overflow-x-auto scrollbar-hide mb-12">
                 <div className="flex items-center gap-2 px-2 py-2 rounded-full glass-morphism border border-white/5 bg-bg-secondary/40 w-max mx-auto min-w-full sm:w-auto sm:min-w-0 sm:mx-auto">
-                    {tabs.map((tab: { id: string; name: string }) => (
+                    {tabs.map((tab: any) => (
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
