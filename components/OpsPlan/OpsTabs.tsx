@@ -247,7 +247,7 @@ export default function OpsTabs() {
             {/* 顶层导航 Tabs */}
             <div className="w-full overflow-x-auto scrollbar-hide mb-12">
                 <div className="flex items-center gap-2 px-2 py-2 rounded-full glass-morphism border border-white/5 bg-bg-secondary/40 w-max mx-auto min-w-full sm:w-auto sm:min-w-0 sm:mx-auto">
-                    {tabs.map((tab: any) => (
+                    {tabs.map((tab: { id: string; name: string }) => (
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}

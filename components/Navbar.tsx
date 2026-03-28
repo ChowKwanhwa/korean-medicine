@@ -30,7 +30,12 @@ export default function Navbar() {
     }, []);
 
     // Close mobile menu on route change
-    useEffect(() => { setMobileOpen(false); }, [pathname]);
+    useEffect(() => {
+        if (mobileOpen) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setMobileOpen(false);
+        }
+    }, [pathname, mobileOpen]);
 
     const navLinks = [
         { name: lang === 'zh' ? '团队' : 'Team', href: '/team' },
