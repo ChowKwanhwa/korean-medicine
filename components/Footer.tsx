@@ -9,7 +9,7 @@ const Footer = () => {
                 <p className="font-medium tracking-wide">
                     <span className="text-cyan font-bold">ChainPulse Capital 链动资本</span>
                     <span className="mx-2 opacity-50">×</span>
-                    <span>MQE Operations Hub</span>
+                    <span>Korean Medicine / KM-Series</span>
                 </p>
                 <div className="flex items-center gap-3 opacity-60">
                     <span>Confidential — For Internal Review Only</span>

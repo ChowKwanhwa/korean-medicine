@@ -9,15 +9,15 @@ export default function OpsHero() {
 
     const t = {
         zh: {
-            tag: '⚡ 运营执行方案 · 2026 Q2–Q3',
+            tag: '⚡ 运营执行方案 · 4个月',
             title: '至臻执行 · 透明增长',
-            subtitle: 'MQE × ChainPulse Capital 六个月全链路运营执行方案。',
+            subtitle: '韩国医药 (Korean Medicine) × ChainPulse Capital 运营执行方案。',
             desc: '从品牌冷启动到生态规模化，每一个里程碑都清晰可见。',
         },
         en: {
-            tag: '⚡ Ops roadmap · 2026 Q2–Q3',
+            tag: '⚡ Ops roadmap · 4-Month',
             title: 'ELITE EXECUTION. TRANSPARENT GROWTH.',
-            subtitle: 'MQE × ChainPulse Capital: 6-Month Full-Cycle Operations Plan.',
+            subtitle: 'Korean Medicine / KM-Series × ChainPulse Capital: Operations Plan.',
             desc: 'From brand cold start to scaled ecosystem, every milestone is visible.',
         }
     }[lang];

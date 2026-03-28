@@ -26,7 +26,7 @@ const categories = [
     },
     {
         title: '运营计划',
-        description: 'MQE × ChainPulse Capital 六个月全链路运营执行方案。',
+        description: 'Korean Medicine / KM-Series × ChainPulse 全链路运营执行方案。',
         icon: <BarChart3 className="text-emerald" size={32} />,
         href: '/ops-plan',
         color: 'group-hover:text-emerald',

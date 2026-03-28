@@ -9,14 +9,14 @@ export default function OpsStats() {
     const { lang } = useLanguage();
 
     const stats = [
-        { label: lang === 'zh' ? '执行阶段' : 'Phases', val: '3', color: 'cyan' },
-        { label: lang === 'zh' ? '目标推特粉丝' : 'Twitter Goal', val: '150k+', color: 'violet' },
-        { label: lang === 'zh' ? '目标注册用户' : 'User Goal', val: '200k', color: 'emerald' },
-        { label: lang === 'zh' ? '合作 KOL 数量' : 'KOL Partners', val: '80+', color: 'gold' },
-        { label: lang === 'zh' ? 'AMA/Space 场次' : 'AMA/Spaces', val: '50+', color: 'cyan' },
-        { label: lang === 'zh' ? '机构/VC 背书' : 'VC Endorsements', val: '5+', color: 'violet' },
-        { label: lang === 'zh' ? '线下参展/主办' : 'Offline Events', val: '3+', color: 'emerald' },
-        { label: lang === 'zh' ? 'CMC 目标排名' : 'CMC Rank Goal', val: 'Top 100', color: 'gold' },
+        { label: lang === 'zh' ? '执行周期' : 'Phases', val: lang === 'zh' ? '4个月' : '4 Months', color: 'cyan' },
+        { label: lang === 'zh' ? 'KOL矩阵直面' : 'Global KOLs', val: '200+', color: 'violet' },
+        { label: lang === 'zh' ? '目标拉新规模' : 'Target TG Reach', val: '10k+', color: 'emerald' },
+        { label: lang === 'zh' ? '优质图文视频' : 'Design Assets', val: '50+', color: 'gold' },
+        { label: lang === 'zh' ? '深度 AMA 场次' : 'Deep AMAs', val: '30+', color: 'cyan' },
+        { label: lang === 'zh' ? '全域曝光帖子' : 'Event Coverage', val: '1000+', color: 'violet' },
+        { label: lang === 'zh' ? '开发者生态支持' : 'Geek Dev Trust', val: lang === 'zh' ? '20名+' : '20+', color: 'emerald' },
+        { label: lang === 'zh' ? '单日宣发活跃' : 'Daily Shilling', val: '200+', color: 'gold' },
     ];
 
     return (
